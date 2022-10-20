@@ -1,0 +1,26 @@
+" TAB remaps for copilot and coc.nvim
+" https://github.com/community/community/discussions/20695
+
+let g:copilot_no_tab_map = v:true
+let g:copilot_assume_mapped = v:true
+
+imap <silent><script><expr> <C-E> copilot#Accept("<End>")
+
+"function! CheckBackspace() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+
+"" priority coc.nvim > copilot > tab
+"inoremap <silent><expr> <TAB>
+"      \ coc#pum#visible() ? coc#pum#next(1):
+"	  \ exists('b:_copilot.suggestions') ? copilot#Accept("<END>") :
+"      \ CheckBackspace() ? "\<TAB>" :
+"      \ coc#refresh()
+	
+"" priority coc.nvim > tab, copilot is separately defined
+"inoremap <silent><expr> <TAB>
+"      \ coc#pum#visible() ? coc#pum#next(1):
+"      \ CheckBackspace() ? "\<TAB>" :
+"      \ coc#refresh()
+
